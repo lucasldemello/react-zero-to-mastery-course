@@ -33,17 +33,7 @@ function App() {
   const [guesses, setGuesses] = useState(guessesQuantity);
   const [score, setScore] = useState(0);
 
-  useEffect(() => {
-    if (guesses <= 0) {
-      // reset all states
-      clearLetterStates();
-
-      // change the game stage to "end"
-      setGameStage(stages[2].name);
-    }
-  }, [guesses]);
-
-  const pickWordAndCategory = () => {
+  const pickWordAndCategory = useCallback(() => {
     const categories = Object.keys(words);
     const category =
       categories[Math.floor(Math.random() * Object.keys(categories).length)];
@@ -52,10 +42,13 @@ function App() {
         Math.floor(Math.random() * words[category].length)
       ].toLowerCase();
     return { word, category };
-  };
+  }, [words]);
 
   // starts the game
-  const startGame = () => {
+  const startGame = useCallback(() => {
+    // reset all letters states
+    clearLetterStates();
+
     // pick a random word from the words list and set the word and category
     const { word, category } = pickWordAndCategory();
 
@@ -69,7 +62,7 @@ function App() {
 
     // change the game stage to "game"
     setGameStage(stages[1].name);
-  };
+  }, [pickWordAndCategory]);
 
   // process the input letter
   const checkLetter = (letter) => {
@@ -108,8 +101,36 @@ function App() {
     setScore(0);
     setGuesses(guessesQuantity);
 
-    setGameStage(stages[0].name);
+    setGameStage(stages[1].name);
   };
+
+  // lose condition
+  useEffect(() => {
+    if (guesses <= 0) {
+      // reset all states
+      clearLetterStates();
+
+      // change the game stage to "end"
+      setGameStage(stages[2].name);
+    }
+  }, [guesses]);
+
+  // check win condition
+  useEffect(() => {
+    const uniqueLetters = [...new Set(letters)];
+
+    // check if the user has guessed all letters
+    if (
+      guessedLetters.length === uniqueLetters.length &&
+      guessedLetters.length > 0
+    ) {
+      // increase the score
+      setScore((actualScore) => (actualScore += 100));
+
+      // pick a new word and category
+      startGame();
+    }
+  }, [guessedLetters, letters, startGame]);
 
   return (
     <div className="App">
