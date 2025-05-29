@@ -11,15 +11,15 @@ const Game = ({
   guesses,
   score,
 }) => {
-  const [letter, setLetter] = useState("");
+  const [inputLetter, setInputLetter] = useState("");
 
   const letterInputRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    checkLetter(letter);
+    checkLetter(inputLetter);
 
-    setLetter("");
+    setInputLetter("");
     letterInputRef.current.focus();
   };
 
@@ -57,10 +57,10 @@ const Game = ({
               const value = e.target.value;
               // Only allow letters
               if (/^[a-zA-Z]?$/.test(value)) {
-                setLetter(value);
+                setInputLetter(value);
               }
             }}
-            value={letter}
+            value={inputLetter}
             ref={letterInputRef}
             autoComplete="off"
           />
