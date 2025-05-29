@@ -1,0 +1,11 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #009A56, #006B4F, #004C54);
+  color: #fff;
+}
