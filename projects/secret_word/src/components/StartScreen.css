@@ -1,0 +1,9 @@
+.start h1 {
+    font-size: 3.5rem;
+}
+
+.start p {
+    margin-bottom: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #f1f1e6
+}
