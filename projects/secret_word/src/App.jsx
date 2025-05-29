@@ -60,8 +60,8 @@ function App() {
   };
 
   // process the input letter
-  const checkLetter = () => {
-    setGameStage(stages[2].name);
+  const checkLetter = (letter) => {
+    console.log(`Letter guessed: ${letter}`);
   };
 
   // reset the game
