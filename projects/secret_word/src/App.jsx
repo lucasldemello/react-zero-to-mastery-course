@@ -22,11 +22,26 @@ function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
   const [words] = useState(wordsList);
 
+  // starts the game
+  const startGame = () => {
+    setGameStage(stages[1].name);
+  };
+
+  // process the input letter
+  const checkLetter = () => {
+    setGameStage(stages[2].name);
+  };
+
+  // reset the game
+  const resetGame = () => {
+    setGameStage(stages[0].name);
+  };
+
   return (
     <div className="App">
-      {gameStage === "start" && <StartScreen />}
-      {gameStage === "game" && <Game />}
-      {gameStage === "end" && <GameOver />}
+      {gameStage === "start" && <StartScreen startGame={startGame} />}
+      {gameStage === "game" && <Game checkLetter={checkLetter} />}
+      {gameStage === "end" && <GameOver resetGame={resetGame} />}
     </div>
   );
 }
