@@ -52,9 +52,17 @@ const Game = ({
             name="letter"
             maxLength="1"
             required
-            onChange={(e) => setLetter(e.target.value)}
+            pattern="[a-zA-Z]"
+            onChange={(e) => {
+              const value = e.target.value;
+              // Only allow letters
+              if (/^[a-zA-Z]?$/.test(value)) {
+                setLetter(value);
+              }
+            }}
             value={letter}
             ref={letterInputRef}
+            autoComplete="off"
           />
           <button>Play!</button>
         </form>
