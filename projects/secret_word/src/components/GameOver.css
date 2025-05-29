@@ -1,0 +1,26 @@
+.gameOver h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.gameOver h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gameOver p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gameOver span {
+  font-weight: bold;
+  background-color: antiquewhite;
+  color: #004C54;
+  border: 2px solid #004C54;
+  border-radius: 25%;
+  padding: 0.5rem 1rem;
+}
