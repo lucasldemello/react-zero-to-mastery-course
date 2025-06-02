@@ -54,3 +54,10 @@ const memoizedCallback = useCallback(() => {
 npm install -g json-server
 json-server --watch db.json
 ```
+
+## useEffect 2
+
+- A certain action will be executed only once
+- Since components are always re-rendering, this is useful when we need one-time actions
+- Has a dependency array, which should contain the data that triggers the function to run automatically
+- Always present in asynchronous executions
