@@ -25,11 +25,11 @@ This course takes you from the basics of React to more advanced concepts like:
 
 ## 🛠️ Projects Included
 
-| #   | Project Name | Description                            | Link                                        |
-| --- | ------------ | -------------------------------------- | ------------------------------------------- |
-| 1   | Secret Word  | Word guessing game with hints provided | [🔗 Readme](projects/secret_word/README.md) |
-| 2   |              |                                        | 🔗 Soon                                     |
-| 3   |              |                                        | 🔗 Soon                                     |
+| #   | Project Name | Description                            | Link                               |
+| --- | ------------ | -------------------------------------- | ---------------------------------- |
+| 1   | Secret Word  | Word guessing game with hints provided | [🔗 Readme](projects/secret_word/) |
+| 2   |              |                                        | 🔗 Soon                            |
+| 3   |              |                                        | 🔗 Soon                            |
 
 ---
 

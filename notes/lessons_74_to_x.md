@@ -41,3 +41,16 @@ const memoizedCallback = useCallback(() => {
   // function body
 }, [dependencies]);
 ```
+
+## JSON Server
+
+- An npm package that simulates a RESTful API using a simple JSON file as a database.
+- Useful for prototyping, testing, and front-end development without needing a real backend.
+- Supports standard HTTP methods (GET, POST, PUT, PATCH, DELETE).
+- Easy to set up and configure.
+- Example usage:
+
+```bash
+npm install -g json-server
+json-server --watch db.json
+```

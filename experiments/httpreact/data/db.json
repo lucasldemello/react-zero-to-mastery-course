@@ -1,0 +1,80 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Maplewood Guardian",
+            "price": 3.0
+        },
+        {
+            "id": 2,
+            "name": "Riverbank Otter",
+            "price": 1.0
+        },
+        {
+            "id": 3,
+            "name": "Thornpaw Tracker",
+            "price": 2.0
+        },
+        {
+            "id": 4,
+            "name": "Blooming Burrow",
+            "price": 5.0
+        },
+        {
+            "id": 5,
+            "name": "Sunpetal Squirrel",
+            "price": 1.0
+        },
+        {
+            "id": 6,
+            "name": "Warren Warden",
+            "price": 4.0
+        },
+        {
+            "id": 7,
+            "name": "Frostleaf Fox",
+            "price": 2.0
+        },
+        {
+            "id": 8,
+            "name": "Grovebound Hare",
+            "price": 1.0
+        },
+        {
+            "id": 9,
+            "name": "Burrowwise Owl",
+            "price": 2.0
+        },
+        {
+            "id": 10,
+            "name": "Thicket Trickster",
+            "price": 3.0
+        },
+        {
+            "id": 11,
+            "name": "Mosscoat Mouse",
+            "price": 1.0
+        },
+        {
+            "id": 12,
+            "name": "Petalplume Finch",
+            "price": 2.0
+        },
+        {
+            "id": 13,
+            "name": "Brambleback Badger",
+            "price": 2.0
+        },
+        {
+            "id": 14,
+            "name": "Sunrise Stoat",
+            "price": 1.0
+        },
+        {
+            "id": 15,
+            "name": "Hollowhide Hedgehog",
+            "price": 3.0
+        }
+    ]
+}
+    
