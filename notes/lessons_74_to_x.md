@@ -61,3 +61,10 @@ json-server --watch db.json
 - Since components are always re-rendering, this is useful when we need one-time actions
 - Has a dependency array, which should contain the data that triggers the function to run automatically
 - Always present in asynchronous executions
+
+## Retrieving data with react
+
+- We'll need a set of resources to bring up data.
+- First, a local state to store the data (useState)
+- Make the API call only once (useEffect)
+- A way to make an asynchronous request (Fetch API)
