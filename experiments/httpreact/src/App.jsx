@@ -28,7 +28,7 @@ function App() {
   // }, []); // execute only once when the component mounts
 
   // 4 - custom hook
-  const { data: items, httpConfig } = useFetch(url);
+  const { data: items, httpConfig, loading } = useFetch(url);
 
   // 2 - Add a card to the list
   const handleSubmit = async (event) => {
@@ -66,17 +66,21 @@ function App() {
     <>
       <div className="App">
         <h1 className="cardsList">Cards list</h1>
-        <ul>
-          {items &&
-            items.map((card) => (
-              <li key={card.id} className="card">
-                <h2>
-                  {card.name} - US$: {card.price}
-                </h2>
-                <p>{card.description}</p>
-              </li>
-            ))}
-        </ul>
+        {/* 6 - Loading state */}
+        {loading && <p>Loading data...</p>}
+        {!loading && (
+          <ul>
+            {items &&
+              items.map((card) => (
+                <li key={card.id} className="card">
+                  <h2>
+                    {card.name} - US$: {card.price}
+                  </h2>
+                  <p>{card.description}</p>
+                </li>
+              ))}
+          </ul>
+        )}
         <div className="add-card">
           <form onSubmit={handleSubmit}>
             <label>
@@ -110,7 +114,10 @@ function App() {
                 required
               />
             </label>
-            <button type="submit">Add Card</button>
+            {/* 7 - Loading state for form submission */}
+            <button type="submit" disabled={loading}>
+              {loading ? "Waiting" : "Add Card"}
+            </button>
           </form>
         </div>
       </div>

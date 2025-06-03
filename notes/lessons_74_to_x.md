@@ -85,3 +85,9 @@ json-server --watch db.json
 - That's called a `custom hook`.
 - Usually, they are stored in a `hooks` folder.
 - We must use the pattern `setName`.
+
+## Loading state
+
+- It's normal to have a loading interval between the request and response.
+- We can apply that on the hook also.
+- Identify when it starts and ends.
