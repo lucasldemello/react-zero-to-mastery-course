@@ -28,7 +28,7 @@ function App() {
   // }, []); // execute only once when the component mounts
 
   // 4 - custom hook
-  const { data: items, httpConfig, loading } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   // 2 - Add a card to the list
   const handleSubmit = async (event) => {
@@ -68,6 +68,8 @@ function App() {
         <h1 className="cardsList">Cards list</h1>
         {/* 6 - Loading state */}
         {loading && <p>Loading data...</p>}
+        {/* 8 - error handling */}
+        {error && <p className="error">{error}</p>}
         {!loading && (
           <ul>
             {items &&
