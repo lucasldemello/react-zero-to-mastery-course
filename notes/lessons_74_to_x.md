@@ -91,3 +91,34 @@ json-server --watch db.json
 - It's normal to have a loading interval between the request and response.
 - We can apply that on the hook also.
 - Identify when it starts and ends.
+
+## React router
+
+- One of the most popular packages for creating routing structures in React apps.
+- Allows our SPA (Single Page Application) to have multiple pages.
+- Needs to be installed.
+- Easy to configure and use.
+- Also provides features like Redirects, Nested Routes, and Not Found (404) Routes.
+
+## Configuring React Router
+
+- To set up routing in React, import `BrowserRouter`, `Routes`, and `Route` from `react-router-dom`:
+
+- **BrowserRouter**: wraps the app to enable routing.
+- **Routes**: groups route definitions.
+- **Route**: maps a path to a component.
+
+## SearchParams
+
+- A feature that allows you to access query parameters from the URL.
+- The `useSearchParams` hook from `react-router-dom` is used to read and update these parameters.
+- Useful for filtering, searching, or passing data via the URL.
+
+**Example:**
+
+```js
+import { useSearchParams } from "react-router-dom";
+
+const [searchParams, setSearchParams] = useSearchParams();
+const query = searchParams.get("query"); // retrieves the value of 'query' from the URL
+```
