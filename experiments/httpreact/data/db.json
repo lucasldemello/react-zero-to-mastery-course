@@ -1,95 +1,34 @@
 {
-    "cards": [
-      {
-        "id": "1",
-        "name": "Maplewood Guardian",
-        "price": 0.25,
-        "description": "A wise and ancient protector of the forest, standing watch beneath the maple trees."
-      },
-      {
-        "id": "2",
-        "name": "Riverbank Otter",
-        "price": 0.15,
-        "description": "A playful swimmer known for its clever tricks and love of shiny treasures."
-      },
-      {
-        "id": "3",
-        "name": "Thornpaw Tracker",
-        "price": 0.20,
-        "description": "A stealthy scout with keen senses, navigating brambles with silent steps."
-      },
-      {
-        "id": "4",
-        "name": "Blooming Burrow",
-        "price": 0.30,
-        "description": "A vibrant underground sanctuary where flora and fauna thrive in harmony."
-      },
-      {
-        "id": "5",
-        "name": "Sunpetal Squirrel",
-        "price": 0.10,
-        "description": "A nimble creature that gathers sunlight as cheerfully as it gathers nuts."
-      },
-      {
-        "id": "6",
-        "name": "Warren Warden",
-        "price": 4.38,
-        "description": "A fierce and noble guardian of woodland tunnels, defending its kin with valor."
-      },
-      {
-        "id": "7",
-        "name": "Frostleaf Fox",
-        "price": 0.25,
-        "description": "A sly and elegant fox whose footsteps frost the ground wherever it goes."
-      },
-      {
-        "id": "8",
-        "name": "Grovebound Hare",
-        "price": 0.15,
-        "description": "A swift traveler bound to ancient groves, leaping through lore and legend."
-      },
-      {
-        "id": "9",
-        "name": "Burrowwise Owl",
-        "price": 0.20,
-        "description": "A nocturnal sage whose wisdom echoes through the winding burrows of the woods."
-      },
-      {
-        "id": "10",
-        "name": "Thicket Trickster",
-        "price": 0.25,
-        "description": "A mischievous spirit of the underbrush, delighting in riddles and illusions."
-      },
-      {
-        "id": "11",
-        "name": "Mosscoat Mouse",
-        "price": 0.10,
-        "description": "A tiny explorer with a mossy coat, blending perfectly into the forest floor."
-      },
-      {
-        "id": "12",
-        "name": "Petalplume Finch",
-        "price": 0.20,
-        "description": "A bright and melodic bird whose feathers bloom like spring petals."
-      },
-      {
-        "id": "13",
-        "name": "Brambleback Badger",
-        "price": 0.25,
-        "description": "A tough and tenacious burrower, armored by years spent in the thorny wilds."
-      },
-      {
-        "id": "14",
-        "name": "Sunrise Stoat",
-        "price": 0.10,
-        "description": "A golden-coated hunter that stirs with the first light, swift and silent."
-      },
-      {
-        "id": "15",
-        "name": "Hollowhide Hedgehog",
-        "price": 0.30,
-        "description": "A reclusive creature who makes its home in hollow logs, curled in peace and patience."
-      }
-    ]
-  }
-  
+  "cards": [
+    {
+      "id": "1",
+      "name": "Maplewood Guardian",
+      "price": 0.25,
+      "description": "A wise and ancient protector of the forest, standing watch beneath the maple trees."
+    },
+    {
+      "id": "2",
+      "name": "Riverbank Otter",
+      "price": 0.15,
+      "description": "A playful swimmer known for its clever tricks and love of shiny treasures."
+    },
+    {
+      "id": "3",
+      "name": "Thornpaw Tracker",
+      "price": 0.2,
+      "description": "A stealthy scout with keen senses, navigating brambles with silent steps."
+    },
+    {
+      "id": "4",
+      "name": "Blooming Burrow",
+      "price": 0.3,
+      "description": "A vibrant underground sanctuary where flora and fauna thrive in harmony."
+    },
+    {
+      "id": "6",
+      "name": "Warren Warden",
+      "price": 4.38,
+      "description": "A fierce and noble guardian of woodland tunnels, defending its kin with valor."
+    }
+  ]
+}
