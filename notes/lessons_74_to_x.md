@@ -77,4 +77,11 @@ json-server --watch db.json
 
 ## Dinamic data loading
 
-- If the request was successfull, we can add the item to the list after the request, making our app more performatic.
+- If the request was successful, we can add the item to the list after the request, making our app more efficient.
+
+## Fetch custom hook
+
+- It's normal to split functions that can be reused into hooks.
+- That's called a `custom hook`.
+- Usually, they are stored in a `hooks` folder.
+- We must use the pattern `setName`.
