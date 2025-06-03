@@ -62,6 +62,11 @@ function App() {
     setDescription("");
   };
 
+  // 9 - delete a item
+  const handleRemove = (id) => {
+    httpConfig(id, "DELETE");
+  };
+
   return (
     <>
       <div className="App">
@@ -79,6 +84,7 @@ function App() {
                     {card.name} - US$: {card.price}
                   </h2>
                   <p>{card.description}</p>
+                  <button onClick={() => handleRemove(card.id)}>Remove</button>
                 </li>
               ))}
           </ul>

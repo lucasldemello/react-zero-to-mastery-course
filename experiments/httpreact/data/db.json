@@ -7,18 +7,6 @@
       "description": "A wise and ancient protector of the forest, standing watch beneath the maple trees."
     },
     {
-      "id": "2",
-      "name": "Riverbank Otter",
-      "price": 0.15,
-      "description": "A playful swimmer known for its clever tricks and love of shiny treasures."
-    },
-    {
-      "id": "3",
-      "name": "Thornpaw Tracker",
-      "price": 0.2,
-      "description": "A stealthy scout with keen senses, navigating brambles with silent steps."
-    },
-    {
       "id": "4",
       "name": "Blooming Burrow",
       "price": 0.3,
