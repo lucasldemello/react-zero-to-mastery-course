@@ -29,6 +29,12 @@
       "name": "Warren Warden",
       "price": 4.38,
       "description": "A fierce and noble guardian of woodland tunnels, defending its kin with valor."
+    },
+    {
+      "id": "9634",
+      "name": "Bello, Bard of the Brambles",
+      "price": "5.00",
+      "description": "During your turn, each non-Equipment artifact and non-Aura enchantment you control with mana value 4 or greater is a 4/4 Elemental creature in addition to its other types and has indestructible, haste, and \"Whenever this creature deals combat damage to a player, draw a card."
     }
   ]
 }

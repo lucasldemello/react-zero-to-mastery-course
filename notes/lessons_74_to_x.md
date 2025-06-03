@@ -74,3 +74,7 @@ json-server --watch db.json
 - To add an item, we'll need to retrieve the form data using `useState`.
 - After submitting the form, assemble the data in a function and send a POST request to our API.
 - This process is similar to retrieving data, but instead of fetching, we are sending new data.
+
+## Dinamic data loading
+
+- If the request was successfull, we can add the item to the list after the request, making our app more performatic.

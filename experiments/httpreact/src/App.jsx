@@ -42,6 +42,15 @@ function App() {
       },
       body: JSON.stringify(newCard),
     });
+
+    // 3 - Dinamically update the cards list
+    const createdCard = await res.json();
+    setCards((prevCards) => [...prevCards, createdCard]);
+
+    // Clear the form fields after submission
+    setName("");
+    setPrice("");
+    setDescription("");
   };
 
   return (
