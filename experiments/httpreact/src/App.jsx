@@ -28,7 +28,7 @@ function App() {
   // }, []); // execute only once when the component mounts
 
   // 4 - custom hook
-  const { data: items } = useFetch(url);
+  const { data: items, httpConfig } = useFetch(url);
 
   // 2 - Add a card to the list
   const handleSubmit = async (event) => {
@@ -41,17 +41,20 @@ function App() {
       description,
     };
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newCard),
-    });
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(newCard),
+    // });
 
-    // 3 - Dinamically update the cards list
-    const createdCard = await res.json();
-    setCards((prevCards) => [...prevCards, createdCard]);
+    // // 3 - Dinamically update the cards list
+    // const createdCard = await res.json();
+    // setCards((prevCards) => [...prevCards, createdCard]);
+
+    // 5 - POST refactor
+    httpConfig(newCard, "POST");
 
     // Clear the form fields after submission
     setName("");
