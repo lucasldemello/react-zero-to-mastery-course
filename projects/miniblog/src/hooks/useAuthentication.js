@@ -1,3 +1,5 @@
+import { db } from "../firebase/config";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -6,7 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
@@ -14,6 +16,7 @@ export const useAuthentication = () => {
 
   // cleanup
   // TODO: study about memory leaks in React
+  // the lesson didn't explain this well
   const [cancelled, setCancelled] = useState(false);
 
   const auth = getAuth();
@@ -23,4 +26,42 @@ export const useAuthentication = () => {
       return;
     }
   }
+
+  const createUser = async (data) => {
+    checkIfIsCancelled();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const { user } = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
+
+      await updateProfile(user, {
+        displayName: data.displayName,
+      });
+      return user;
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // TODO: really study about memory leaks in React
+  // the lesson didn't explain this well
+  useEffect(() => {
+    return () => {
+      setCancelled(true);
+    };
+  }, []);
+
+  return {
+    auth,
+    createUser,
+    error,
+    loading,
+  };
 };
