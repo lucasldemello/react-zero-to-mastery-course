@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const Register = () => {
   return (
-    <div>
+    <div className={styles.register}>
       <h1>Register before posting</h1>
       <p>
         Create your account and share your history with the world. It's free and
