@@ -3,6 +3,31 @@ import styles from "./Register.module.css";
 import { useState, useEffect } from "react";
 
 const Register = () => {
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setError("");
+
+    const user = {
+      displayName,
+      email,
+      password,
+    };
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    console.log("User registered:", user);
+  };
+
   return (
     <div className={styles.register}>
       <h1>Register before posting</h1>
@@ -10,7 +35,7 @@ const Register = () => {
         Create your account and share your history with the world. It's free and
         easy!
       </p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <span>Name:</span>
           <input
@@ -18,6 +43,8 @@ const Register = () => {
             name="name"
             placeholder="Enter your name"
             required
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
           />
         </label>
         <label>
@@ -27,6 +54,8 @@ const Register = () => {
             name="email"
             placeholder="Enter your email"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label>
@@ -36,6 +65,8 @@ const Register = () => {
             name="password"
             placeholder="Enter your password"
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <label>
@@ -45,11 +76,14 @@ const Register = () => {
             name="confirmPassword"
             placeholder="Confirm your password"
             required
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
         <button className="btn" type="submit">
           Register
         </button>
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );
