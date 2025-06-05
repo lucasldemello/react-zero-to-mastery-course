@@ -27,6 +27,7 @@ export const useAuthentication = () => {
     }
   }
 
+  // register
   const createUser = async (data) => {
     checkIfIsCancelled();
     setLoading(true);
@@ -50,6 +51,12 @@ export const useAuthentication = () => {
     }
   };
 
+  // logout
+  const logout = () => {
+    checkIfIsCancelled();
+    signOut(auth);
+  };
+
   // TODO: really study about memory leaks in React
   // the lesson didn't explain this well
   useEffect(() => {
@@ -63,5 +70,6 @@ export const useAuthentication = () => {
     createUser,
     error,
     loading,
+    logout,
   };
 };
