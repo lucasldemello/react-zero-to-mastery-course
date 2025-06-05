@@ -281,3 +281,55 @@ function Counter() {
   );
 }
 ```
+
+## Memory leaks in React
+
+- Memory leaks occur when components hold onto resources (like timers, subscriptions, or async operations) after they unmount, preventing garbage collection.
+- Common causes:
+  - Unsubscribed event listeners or subscriptions (e.g., WebSocket, RxJS).
+  - Unresolved asynchronous requests (e.g., fetch, setTimeout, setInterval).
+  - Not cleaning up timers or intervals.
+- Symptoms:
+  - Increasing memory usage over time.
+  - Unexpected app slowdowns or crashes.
+- How to avoid memory leaks:
+  - Always clean up side effects in the cleanup function of `useEffect`.
+  - Clear timers and intervals in the cleanup function.
+  - Cancel pending async requests or ignore their results if the component unmounts.
+  - Unsubscribe from subscriptions (e.g., event listeners, sockets) in the cleanup function.
+- Example of cleanup in `useEffect`:
+
+```js
+useEffect(() => {
+  const timer = setInterval(() => {
+    // do something
+  }, 1000);
+
+  return () => {
+    clearInterval(timer); // cleanup
+  };
+}, []);
+```
+
+- Example of aborting fetch requests:
+
+```js
+useEffect(() => {
+  const controller = new AbortController();
+
+  fetch("/api/data", { signal: controller.signal })
+    .then((response) => response.json())
+    .then((data) => {
+      /* handle data */
+    })
+    .catch((error) => {
+      if (error.name !== "AbortError") {
+        // handle error
+      }
+    });
+
+  return () => {
+    controller.abort(); // abort fetch on unmount
+  };
+}, []);
+```
