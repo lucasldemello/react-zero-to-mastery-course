@@ -1,12 +1,61 @@
-# React + Vite
+# MiniBlog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple blog application built with React, allowing users to create, read, update, and delete blog posts. This project uses Firebase for authentication and data storage.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (sign up, login, logout)
+- Create, edit, and delete blog posts
+- Responsive design
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Firebase (Authentication & Firestore)
+- React Router
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Firebase Setup
+
+1. Go to [Firebase Console](https://console.firebase.google.com/) and create a new project.
+2. In the project dashboard, click **Firestore Database** and create a new database in test mode.
+3. Go to **Project Settings** > **General** and add a new web app.
+4. Copy the Firebase config object.
+
+### Environment Variables
+
+Create a `.env` file in the root directory and add your Firebase config:
+
+```env
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+```
+
+> **Note:** Never commit your `.env` file to version control.
+
+### Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### Run the App
+
+```bash
+npm start
+# or
+yarn start
+```
+
+The app will be available at [http://localhost:3000](http://localhost:3000).
+
+## License
+
+MIT
