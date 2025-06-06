@@ -62,12 +62,12 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/dashboard"
+                to="/posts/create"
                 className={({ isActive }) =>
                   isActive ? styles.active : undefined
                 }
               >
-                Dashboard
+                New Post
               </NavLink>
             </li>
           </>
