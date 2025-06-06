@@ -1,5 +1,9 @@
 # MiniBlog
 
+<img src="public/miniblog.png" alt="MiniBlog Preview" width="900" />
+
+[View this file on GitHub](https://github.com/your-username/your-repo/blob/main/projects/miniblog/README.md)
+
 A simple blog application built with React, allowing users to create, read, update, and delete blog posts. This project uses Firebase for authentication and data storage.
 
 ## Features
