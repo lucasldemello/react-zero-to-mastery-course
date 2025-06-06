@@ -1,8 +1,9 @@
 import styles from "./CreatePost.module.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -11,8 +12,45 @@ const CreatePost = () => {
   const [tags, setTags] = useState([]);
   const [formError, setFormError] = useState("");
 
+  const { user } = useAuthValue();
+
+  const navigate = useNavigate();
+
+  const { insertDocument, response } = useInsertDocument("posts");
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError("");
+
+    // Validate image URL
+    try {
+      new URL(image);
+    } catch (error) {
+      setFormError("Please provide a valid image URL.");
+      return;
+    }
+
+    // create array of tags
+    const tagsArray = tags.map((tag) => tag.trim().toLowerCase());
+
+    // check all values
+    if (!title || !image || !tags || !body) {
+      setFormError("Please fill in all fields.");
+    }
+
+    if (formError) return;
+
+    insertDocument({
+      title,
+      image,
+      body,
+      tags: tagsArray,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
+
+    // redirect user to home page
+    navigate("/");
   };
 
   return (
@@ -57,7 +95,6 @@ const CreatePost = () => {
           <span>Tags (comma separated):</span>
           <input
             type="text"
-            required
             placeholder="Enter tags separated by commas"
             className={styles.tags}
             value={tags.join(", ")}
@@ -66,7 +103,15 @@ const CreatePost = () => {
             }
           />
         </label>
-        <button className="btn">Create</button>
+        {!response.loading && <button className="btn">Create Post</button>}
+        {response.loading && (
+          <button className="btn" disabled>
+            Loading...
+          </button>
+        )}
+        {(response.error || formError) && (
+          <p className="error">{response.error || formError}</p>
+        )}
       </form>
     </div>
   );
