@@ -89,11 +89,16 @@
   font-size: 0.9rem;
   font-weight: 500;
   margin: 0;
-  transition: background-color 0.2s ease;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .tag:hover {
-  background: #e0e0e0;
+  background: #007acc;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 122, 204, 0.3);
 }
 
 .loading {
