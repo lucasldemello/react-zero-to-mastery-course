@@ -1,19 +1,21 @@
 import styles from "./Post.module.css";
 
 // hooks
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
 
 const Post = () => {
   const { id } = useParams();
   const { document: post, loading } = useFetchDocument("posts", id);
 
+  // Função para formatar o body com quebras de linha
   const formatPostBody = (body) => {
     if (!body) return "";
 
     return body
       .split("\n")
       .map((paragraph, index) => {
+        // Remove paragrafos vazios
         if (paragraph.trim() === "") return null;
 
         return (
@@ -62,9 +64,13 @@ const Post = () => {
                 <h3>Tags:</h3>
                 <div className={styles.tags}>
                   {post.tags.map((tag) => (
-                    <span key={tag} className={styles.tag}>
+                    <Link
+                      key={tag}
+                      to={`/search?q=${encodeURIComponent(tag)}`}
+                      className={styles.tag}
+                    >
                       #{tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               </div>
