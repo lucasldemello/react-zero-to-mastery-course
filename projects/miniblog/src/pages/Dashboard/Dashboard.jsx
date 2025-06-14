@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // hooks
 import { useAuthValue } from "../../context/AuthContext";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useDeleteDocument } from "../../hooks/useDeleteDocument";
 
 const Dashboard = () => {
   const { user } = useAuthValue();
@@ -14,12 +15,7 @@ const Dashboard = () => {
   const { documents: posts, loading } = useFetchDocuments("posts", null, uid);
 
   // delete post function
-  const deleteDocument = async (id) => {
-    if (window.confirm("Are you sure you want to delete this post?")) {
-      // Here you would typically call a function to delete the post from your database
-      console.log("Post deleted:", id);
-    }
-  };
+  const { deleteDocument } = useDeleteDocument("posts");
 
   if (loading) {
     return <p>Loading...</p>;
