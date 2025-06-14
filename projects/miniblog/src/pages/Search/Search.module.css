@@ -14,5 +14,13 @@
 }
 
 .noposts {
-    text-align: center;
+  text-align: center;
+}
+
+.noposts p {
+  margin-bottom: 1.5em;
+}
+
+.noposts a {
+  padding: 10px 25px;
 }
