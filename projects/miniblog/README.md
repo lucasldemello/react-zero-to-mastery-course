@@ -4,19 +4,24 @@
 
 [View this file on GitHub](https://github.com/your-username/your-repo/blob/main/projects/miniblog/README.md)
 
-A simple blog application built with React, allowing users to create, read, update, and delete blog posts. This project uses Firebase for authentication and data storage.
+A simple and modern blog application built with React and Firebase. MiniBlog allows users to create, read, update, and delete blog posts with secure authentication and real-time data updates.
 
 ## Features
 
-- User authentication (sign up, login, logout)
+- User authentication (sign up, login, logout) with Firebase Auth
 - Create, edit, and delete blog posts
-- Responsive design
+- Real-time updates with Firestore
+- Responsive design for all devices
+- Route protection for authenticated pages
+- User-friendly interface
 
-## Technologies
+## Technologies Used
 
-- React
-- Firebase (Authentication & Firestore)
-- React Router
+- [React](https://react.dev/)
+- [Firebase Authentication](https://firebase.google.com/products/auth)
+- [Cloud Firestore](https://firebase.google.com/products/firestore)
+- [React Router](https://reactrouter.com/)
+- [Vite](https://vitejs.dev/) (for fast development)
 
 ## Getting Started
 
@@ -27,14 +32,16 @@ A simple blog application built with React, allowing users to create, read, upda
 
 ### Firebase Setup
 
-1. Go to [Firebase Console](https://console.firebase.google.com/) and create a new project.
-2. In the project dashboard, click **Firestore Database** and create a new database in test mode.
-3. Go to **Project Settings** > **General** and add a new web app.
-4. Copy the Firebase config object.
+1. Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+2. In your project dashboard, select **Firestore Database** and create a new database (start in test mode for development).
+3. Go to **Project Settings** > **General** and register a new web app.
+4. Copy your Firebase config object.
 
 ### Environment Variables
 
-Create a `.env` file in the root directory and add your Firebase config:
+You can copy the provided `.env.sample` file to `.env` and replace the placeholder values with your Firebase config:
+
+Create a `.env` file in the root directory and add your Firebase config values:
 
 ```env
 VITE_FIREBASE_API_KEY=your_firebase_api_key
@@ -53,13 +60,29 @@ yarn install
 ### Run the App
 
 ```bash
-npm start
+npm run dev
 # or
-yarn start
+yarn dev
 ```
 
-The app will be available at [http://localhost:3000](http://localhost:3000).
+The app will be available at [http://localhost:5173](http://localhost:5173) by default.
+
+## Folder Structure
+
+```
+miniblog/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── services/
+│   └── App.jsx
+├── .env
+├── package.json
+└── README.md
+```
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
