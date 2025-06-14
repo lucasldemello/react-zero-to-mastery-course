@@ -9,8 +9,8 @@ const PostDetail = ({ post }) => {
       <h2>{post.title}</h2>
       <p className={styles.createdby}>por: {post.createdBy}</p>
       <div className={styles.tags}>
-        {post.tags.map((tag) => (
-          <p key={tag}>
+        {post.tags.map((tag, index) => (
+          <p key={`${tag}-${index}`}>
             <span>#</span>
             {tag}
           </p>

@@ -36,7 +36,7 @@ const Home = () => {
       </form>
       <div className="post-list">
         {loading && <p>Loading...</p>}
-        {posts && posts.map((post) => PostDetail({ post, key: post.id }))}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>Found no posts</p>
