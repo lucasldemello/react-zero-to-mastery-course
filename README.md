@@ -28,7 +28,7 @@ This course takes you from the basics of React to more advanced concepts like:
 | #   | Project Name | Description                            | Link                               |
 | --- | ------------ | -------------------------------------- | ---------------------------------- |
 | 1   | Secret Word  | Word guessing game with hints provided | [🔗 Readme](projects/secret_word/) |
-| 2   |              |                                        | 🔗 Soon                            |
+| 2   | MiniBLOG     |                                        | [🔗 Readme](projects/miniblog/)    |
 | 3   |              |                                        | 🔗 Soon                            |
 
 ---
