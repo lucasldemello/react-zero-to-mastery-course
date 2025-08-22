@@ -13,3 +13,15 @@
 - State changes are typically handled through the `onChange` event.
 - Inputs managed by state are called "controlled inputs" and can be easily cleared by updating the state.
 - After completing a form, you can combine the state values and send the data to the back-end.
+
+## useReducer
+
+- `useReducer` is similar to `useState`: both manage state (values) in a component.
+- The key difference: `useReducer` lets you run a function every time the state changes.
+- With `useReducer`, you provide:
+  - The current state value.
+  - A reducer function that decides how to update the state based on an action.
+- Think of `useReducer` as a way to handle more complex state logic, especially when state updates depend on the previous state or involve multiple actions.
+- Easy way to remember:
+  - `useState` = simple value changes.
+  - `useReducer` = complex updates using a function.
