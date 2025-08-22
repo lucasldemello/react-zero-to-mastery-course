@@ -25,3 +25,11 @@
 - Easy way to remember:
   - `useState` = simple value changes.
   - `useReducer` = complex updates using a function.
+
+## Advancing with useReducer
+
+- If you use `useReducer` just to update a simple value, it's basically the same as `useState`.
+- `useReducer` shines when you need to handle more complex state changes, like when you have multiple actions. In these cases, you'll often see a `switch` statement inside the reducer function to decide how to update the state based on the action type.
+- Easy tip:
+  - Use `useState` for simple state.
+  - Use `useReducer` when you have several ways to update the state or more complicated logic.
