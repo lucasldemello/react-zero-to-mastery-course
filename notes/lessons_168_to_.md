@@ -33,3 +33,11 @@
 - Easy tip:
   - Use `useState` for simple state.
   - Use `useReducer` when you have several ways to update the state or more complicated logic.
+
+## useEffect
+
+- `useEffect` is one of the most commonly used hooks in React, often used alongside `useState`.
+- It allows you to perform side effects in your components, such as updating the DOM, fetching data (HTTP requests), setting up subscriptions, and more.
+- The main advantage of `useEffect` is that you can control when the effect runs by specifying dependencies.
+- The syntax consists of a function (the effect) and an array of dependencies. The effect runs after every render by default, but you can limit it to run only when certain values change.
+- Example use cases: fetching data when a component mounts, updating the document title, or cleaning up resources when a component unmounts.
